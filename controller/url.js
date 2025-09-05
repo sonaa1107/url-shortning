@@ -10,8 +10,9 @@ async function handleGenerateShortUrl(req,res) {
         redirectUrl:body.url,
         visitHistory:[]
     })
-    return res.status(200).json({id:shortId})
-}
+    return res.render("home",{id:shortId})
+//     return res.status(200).json({id:shortId})
+ }
 
 async function handleGetUrlById(req,res) {
     const shortId=req.params.shortId;
@@ -32,10 +33,16 @@ async function handleDeleteAll(req,res) {
     await URL.deleteMany({})
     return res.json({status:"successfully delete all entry"})
 }
+// async function handleGetAllOnFrontEnd(req,res) {
+//     const allurl=await URL.find({});
+//     return res.render("home");
+    
+// }
 module.exports={
     handleGenerateShortUrl,
     handleGetUrlById,
     handleGetAnalytics,
     handleDeleteShortId,
     handleDeleteAll,
+    // handleGetAllOnFrontEnd,
 }

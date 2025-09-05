@@ -1,6 +1,6 @@
 const express=require("express");
 const router=express.Router();
-const {handleGenerateShortUrl, handleGetUrlById, handleGetAnalytics, handleDeleteShortId, handleDeleteAll}=require("../controller/url")
+const {handleGenerateShortUrl, handleGetUrlById, handleGetAnalytics, handleDeleteShortId, handleDeleteAll, handleGetAllOnFrontEnd}=require("../controller/url")
 
 router.route("/")
 .post(handleGenerateShortUrl)
